@@ -10,50 +10,51 @@ header {
   background-color: #EC715F;
 }
 
-nav {
+.header-group {
   width: 1024px;
   margin: 0 auto;
+  display:flex;
+  justify-content: space-between;
+}
+
+#menu-box__check {
+  display: none;
 }
 
 .nav-list {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  line-height: 70px;
 }
 
-.nav-list > :first-child {
-  margin-right: auto;
-}
-
-.nav-list-logo > img {
+.header-group img {
   height: 70px;
 }
 
 .nav-list-item {
   font-size: 16px;
   color: #FAFAFA;
-  margin: 0 30px;
+  padding: 0 30px;
+  width: 120px;
 }
 
 .main-visual {
   background-image: url(img2/mv.png);
-  background-size: 100%;
-  background-position: bottom;
+  background-size: cover;
+  background-position: center;
   height: 650px;
   padding-top: 200px;
   text-align: center;
   color: #FAFAFA;
 }
 
-.main-visual > h2 {
+.visual-title {
   font-size: 64px;
   margin-bottom: 10px;
 }
 
-.main-visual > p {
+.visual-text {
   font-size: 20px;
 }
-
 .main-contents1 {
   background-color: #ECEFF1;
 }
@@ -236,6 +237,10 @@ nav {
   font-size: 20px;
 }
 
+.link-text {
+  color: #212121;
+}
+
 .sns-icon i {
   font-size: 50px;
   margin-right: 20px;
@@ -254,5 +259,137 @@ footer {
 .copyright {
   font-size: 16px;
   color: #FAFAFA;
-  line-height: 60px
+  line-height: 60px;
 }
+
+@media screen and (max-width: 768px) {
+  
+header {
+  height: 50px;
+  width: 100%;
+}
+
+.header-group {
+  width: 90%;
+  position: relative;
+}
+
+.header-group img {
+  height: 50px;
+}
+
+/* ハンバーガーメニュのボタン */
+.menu-box__box {
+  position: absolute; 
+  top: 0;
+  right: 0;
+  /* 中の３本線を中央寄せ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*ハンバーガーメニュー自体のサイズと枠線*/
+  width: 40px;
+  height: 40px;
+  border: 1px solid #FAFAFA;
+  margin: 5px 0 5px auto;
+  z-index: 100;
+}
+/*メニューの白線を疑似要素を使って３本作成*/
+.menu-box__box span,
+.menu-box__box span:before,
+.menu-box__box span:after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #FAFAFA;
+  position: absolute;
+}
+
+.menu-box__box span:before {
+  bottom: 8px;
+}
+
+.menu-box__box span:after {
+  top: 8px;
+}
+
+.nav-list {
+  display: none;
+}
+
+.main-visual {
+  background-image: url(img2/code.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+.visual-title, .visual-text {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.Portfolio, .Feature, .Profile, .Contact {
+  width: 0;
+}
+
+.contents-area {
+  padding: 90px 0;
+  width: 90%;
+}
+
+.portfolio-images {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-img {
+  margin-right: 0;
+}
+
+.portfolio-img:nth-child(odd) {
+  display: none;
+}
+
+.portfolio-img:nth-child(4) {
+  margin-bottom: 10px;
+}
+
+.strength-group {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-info {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-item {
+  text-align: center;
+}
+
+.contact-group {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-name, .profile-skill {
+  margin-top: 20px;
+}
+
+.description-title:first-child {
+  margin-top: 0;
+}
+
+.sns-icon i {
+  margin-right: 8px;
+}
+
+} 
